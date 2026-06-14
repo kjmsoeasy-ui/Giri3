@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>제주도 — 화산이 빚은 대한민국의 보물</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+:root {
+  --jeju-green:  #2D6A4F;
+  --jeju-teal:   #40916C;
+  --jeju-sky:    #1B6CA8;
+  --jeju-lava:   #6B2737;
+  --jeju-orange: #E76F51;
+  --jeju-sand:   #C9A96E;
+  --jeju-cream:  #F8F5EE;
+  --jeju-dark:   #1A2332;
+  --jeju-mist:   #EAF2EE;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--jeju-cream);
+  color: var(--jeju-dark);
+  line-height: 1.8;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 0 80px;
+  overflow: hidden;
+  background: var(--jeju-dark);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(26,35,50,0.3) 0%, rgba(26,35,50,0.85) 100%),
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Seongsan_Ilchulbong.jpg/1280px-Seongsan_Ilchulbong.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(64,145,108,0.85);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 6px 18px 6px 14px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 .accent { color: #95D5B2; }
+
+.hero-sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  font-weight: 300;
+  max-width: 520px;
+  margin-bottom: 40px;
+  line-height: 1.9;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-tag {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.8rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ─── STRIP ─── */
+.strip {
+  background: var(--jeju-green);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.strip-item {
+  padding: 22px 40px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  flex: 1;
+  min-width: 160px;
+}
+
+.strip-item:last-child { border-right: none; }
+
+.strip-item .val {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #95D5B2;
+  display: block;
+  line-height: 1.1;
+}
+
+.strip-item .lbl {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.1em;
+  margin-top: 3px;
+}
+
+/* ─── LAYOUT ─── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+
+.section { padding: 90px 0; }
+.section.alt { background: var(--jeju-mist); }
+.section.dark { background: var(--jeju-dark); }
+
+.section-head { margin-bottom: 52px; }
+
+.section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--jeju-teal);
+  margin-bottom: 10px;
+}
+
+.section-kicker::before {
+  content: '';
+  width: 24px; height: 2px;
+  background: var(--jeju-teal);
+  display: inline-block;
+}
+
+.section-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--jeju-dark);
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.section-title.on-dark { color: #fff; }
+.section-title .hi { color: var(--jeju-teal); }
+.section-title .hi-dark { color: #95D5B2; }
+
+.section-desc {
+  font-size: 0.95rem;
+  color: #5a6a6a;
+  max-width: 620px;
+  line-height: 1.9;
+}
+
+.section-desc.on-dark { color: rgba(255,255,255,0.6); }
+
+/* ─── PHOTO GRID ─── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 12px;
+  margin: 48px 0;
+}
+
+.photo-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-card:hover img { transform: scale(1.05); }
+
+.photo-card.span2 { grid-column: span 2; }
+.photo-card.span2v { grid-row: span 2; }
+
+.photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(26,35,50,0.88), transparent);
+  padding: 20px 18px 16px;
+  color: #fff;
+}
+
+.photo-overlay .po-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #95D5B2;
+  margin-bottom: 3px;
+}
+
+.photo-overlay .po-name {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.photo-overlay .po-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.70);
+  margin-top: 2px;
+}
+
+/* ─── GEO CARDS ─── */
+.geo-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.geo-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.07);
+}
+
+.geo-card-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.geo-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.geo-card-body {
+  padding: 24px 22px;
+}
+
+.geo-card-body .tag {
+  display: inline-block;
+  background: var(--jeju-mist);
+  color: var(--jeju-teal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.geo-card-body h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--jeju-dark);
+  margin-bottom: 8px;
+}
+
+.geo-card-body p {
+  font-size: 0.85rem;
+  color: #5a6a6a;
+  line-height: 1.8;
+}
+
+/* ─── CLIMATE ─── */
+.climate-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.climate-text p {
+  font-size: 0.9rem;
+  color: #4a5a5a;
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.climate-badge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.climate-badge {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.climate-badge .cb-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.climate-badge h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--jeju-dark);
+  margin-bottom: 3px;
+}
+
+.climate-badge p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.climate-img-block {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.climate-img-block img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
+}
+
+.climate-img-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(26,35,50,0.85), transparent);
+  padding: 24px 20px 16px;
+  color: #fff;
+  font-size: 0.82rem;
+}
+
+/* ─── CULTURE INFLUENCE ─── */
+.influence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.influence-card {
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  height: 320px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.influence-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.influence-card .ic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,35,50,0.92) 0%, rgba(26,35,50,0.2) 55%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 20px 20px;
+}
+
+.influence-card .ic-num {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.12);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.influence-card .ic-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #95D5B2;
+  margin-bottom: 6px;
+}
+
+.influence-card .ic-text {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.7;
+}
+
+/* ─── ATTRACTION ─── */
+.attraction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.attraction-item {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.07);
+}
+
+.attraction-item.rev { grid-template-columns: 1fr 320px; }
+
+.ai-img {
+  height: 240px;
+  overflow: hidden;
+}
+
+.ai-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.attraction-item.rev .ai-img { order: 2; }
+
+.ai-body {
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ai-body .tag {
+  display: inline-block;
+  background: var(--jeju-mist);
+  color: var(--jeju-teal);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.ai-body h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--jeju-dark);
+  margin-bottom: 10px;
+}
+
+.ai-body p {
+  font-size: 0.85rem;
+  color: #5a6a6a;
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--jeju-green);
+  background: var(--jeju-mist);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* ─── UNESCO BOX ─── */
+.unesco-box {
+  background: linear-gradient(135deg, var(--jeju-sky) 0%, #0D3B66 100%);
+  border-radius: 18px;
+  padding: 48px 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px;
+  margin: 52px 0;
+}
+
+.ub-item h3 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.05rem;
+  color: #95D5B2;
+  margin-bottom: 10px;
+}
+
+.ub-item p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.8;
+}
+
+/* ─── QUOTE ─── */
+.quote-section {
+  text-align: center;
+  padding: 80px 40px;
+  background: var(--jeju-dark);
+}
+
+.quote-section blockquote {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.quote-section cite {
+  font-size: 0.8rem;
+  color: var(--jeju-sand);
+  letter-spacing: 0.12em;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: #111820;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.78rem;
+  line-height: 2;
+}
+
+footer strong { color: rgba(255,255,255,0.65); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .photo-card.span2 { grid-column: span 1; }
+  .photo-card.span2v { grid-row: span 1; }
+  .geo-cards { grid-template-columns: 1fr; }
+  .climate-row { grid-template-columns: 1fr; }
+  .influence-grid { grid-template-columns: 1fr 1fr; }
+  .attraction-item { grid-template-columns: 1fr; }
+  .attraction-item.rev { grid-template-columns: 1fr; }
+  .attraction-item.rev .ai-img { order: 0; }
+  .ai-img { height: 200px; }
+  .unesco-box { grid-template-columns: 1fr; }
+  .strip-item { min-width: 120px; padding: 18px 20px; }
+  .hero-content { padding: 0 24px; }
+  .container { padding: 0 20px; }
+}
+
+@media (max-width: 540px) {
+  .influence-grid { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .section { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">🌋 대한민국 자연 여행지 탐구 보고서</div>
+    <h1>제주도<br><span class="accent">화산이 빚어낸<br>천년의 풍경</span></h1>
+    <p class="hero-sub">180만 년 화산의 역사가 만든 한라산·오름·용암동굴·주상절리.<br>
+    대한민국 유일의 유네스코 세계자연유산이 이곳에 있습니다.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">🏔️ 한라산 1,950m</span>
+      <span class="hero-tag">🌊 유네스코 세계자연유산 2007</span>
+      <span class="hero-tag">🌿 유네스코 세계지질공원</span>
+      <span class="hero-tag">🧭 세계생물권보전지역</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STAT STRIP ══ -->
+<div class="strip">
+  <div class="strip-item">
+    <span class="val">180만 년</span>
+    <span class="lbl">화산 활동 역사</span>
+  </div>
+  <div class="strip-item">
+    <span class="val">1,847 km²</span>
+    <span class="lbl">제주도 면적</span>
+  </div>
+  <div class="strip-item">
+    <span class="val">360여 개</span>
+    <span class="lbl">오름(기생화산) 수</span>
+  </div>
+  <div class="strip-item">
+    <span class="val">1,950 m</span>
+    <span class="lbl">한라산 — 남한 최고봉</span>
+  </div>
+  <div class="strip-item">
+    <span class="val">트리플 크라운</span>
+    <span class="lbl">유네스코 3관왕</span>
+  </div>
+</div>
+
+
+<!-- ══ SECTION 1: 지역 선정 & 지형 ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">01 지역 선정 및 지형 특성</div>
+      <h2 class="section-title">왜 제주도인가?<br><span class="hi">화산이 만든 지질학의 교과서</span></h2>
+      <p class="section-desc">
+        제주도는 대한민국에서 지형적 다양성·기후적 독특함·관광 자원의 밀도가 가장 높은 지역입니다.
+        유네스코 세계자연유산·세계지질공원·생물권보전지역 세 가지를 동시에 보유한,
+        국내 유일의 <strong>유네스코 자연 트리플 크라운</strong> 지역입니다.
+      </p>
+    </div>
+
+    <!-- 사진 그리드 -->
+    <div class="photo-grid">
+      <div class="photo-card span2v">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hallasan_from_the_north.jpg/1280px-Hallasan_from_the_north.jpg"
+             alt="한라산" loading="lazy">
+        <div class="photo-overlay">
+          <div class="po-label">지형의 중심</div>
+          <div class="po-name">한라산 (1,950m)</div>
+          <div class="po-desc">남한 최고봉 · 화구호 백록담 · 국립공원</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Seongsan_Ilchulbong.jpg/1280px-Seongsan_Ilchulbong.jpg"
+             alt="성산일출봉" loading="lazy">
+        <div class="photo-overlay">
+          <div class="po-label">수성화산체</div>
+          <div class="po-name">성산일출봉</div>
+          <div class="po-desc">UNESCO 세계자연유산</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Jeju_Jusangjeolli_Cliff.jpg/1280px-Jeju_Jusangjeolli_Cliff.jpg"
+             alt="주상절리" loading="lazy">
+        <div class="photo-overlay">
+          <div class="po-label">용암 냉각 지형</div>
+          <div class="po-name">중문·대포 주상절리</div>
+          <div class="po-desc">천연기념물 제443호</div>
+        </div>
+      </div>
+      <div class="photo-card span2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Manjang_Cave.jpg/1280px-Manjang_Cave.jpg"
+             alt="만장굴" loading="lazy">
+        <div class="photo-overlay">
+          <div class="po-label">용암동굴</div>
+          <div class="po-name">만장굴</div>
+          <div class="po-desc">세계 최장급 용암동굴 · 길이 약 7.4km</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지형 4대 특성 카드 -->
+    <div class="section-kicker" style="margin-top:60px;">화산 지형의 4대 특색</div>
+    <div class="geo-cards" style="margin-top:16px;">
+      <div class="geo-card">
+        <div class="geo-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Baengnodam.jpg/1280px-Baengnodam.jpg"
+               alt="백록담" loading="lazy">
+        </div>
+        <div class="geo-card-body">
+          <span class="tag">순상화산 · 화구호</span>
+          <h3>🏔️ 한라산과 백록담</h3>
+          <p>한라산은 약 78만 년 이후 형성된 순상화산으로, 정상에는 화구호인 <strong>백록담</strong>이 자리 잡고 있습니다. 조면암과 현무암이 공존하는 독특한 지질 구조로, 1966년 천연기념물, 1970년 국립공원으로 지정되었습니다. 해안에서 정상까지 아열대~아한대 식생대가 수직으로 층층이 펼쳐집니다.</p>
+        </div>
+      </div>
+      <div class="geo-card">
+        <div class="geo-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sunrise_peak_Jeju_island.jpg/1280px-Sunrise_peak_Jeju_island.jpg"
+               alt="성산일출봉" loading="lazy">
+        </div>
+        <div class="geo-card-body">
+          <span class="tag">수성화산체 · 응회구</span>
+          <h3>🌋 오름과 성산일출봉</h3>
+          <p>제주에는 <strong>360여 개의 오름</strong>(기생화산)이 분포합니다. 그 중 성산일출봉은 약 5~12만 년 전 얕은 바닷속에서 마그마가 분출하여 생긴 <strong>수성화산체</strong>입니다. 뜨거운 마그마와 차가운 바닷물이 충돌하며 쌓인 화산재층이 지금의 장엄한 분화구를 만들었습니다.</p>
+        </div>
+      </div>
+      <div class="geo-card">
+        <div class="geo-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Jeju_Jusangjeolli_Cliff.jpg/1280px-Jeju_Jusangjeolli_Cliff.jpg"
+               alt="주상절리" loading="lazy">
+        </div>
+        <div class="geo-card-body">
+          <span class="tag">용암 냉각 지형</span>
+          <h3>🪨 주상절리대</h3>
+          <p>중문·대포 해안의 주상절리는 용암이 바다로 흘러들어 급격히 냉각되면서 수축할 때 만들어진 <strong>6각형 기둥 구조</strong>입니다. 최대 높이 약 30m, 길이 2km에 걸쳐 펼쳐진 절경으로, 천연기념물 제443호로 지정되어 있습니다.</p>
+        </div>
+      </div>
+      <div class="geo-card">
+        <div class="geo-card-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Manjang_Cave.jpg/1280px-Manjang_Cave.jpg"
+               alt="만장굴" loading="lazy">
+        </div>
+        <div class="geo-card-body">
+          <span class="tag">용암동굴</span>
+          <h3>🕳️ 거문오름 용암동굴계</h3>
+          <p>약 10~30만 년 전 거문오름에서 분출한 용암이 지하를 흘러 만든 <strong>세계적인 용암동굴계</strong>입니다. 만장굴(총 길이 약 7.4km), 김녕굴, 벵뒤굴, 용천동굴 등이 포함되며, 이 중 만장굴은 세계자연유산으로 지정된 5개 동굴 중 유일하게 일반에 공개됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SECTION 2: 기후 ══ -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">02 기후적 특성</div>
+      <h2 class="section-title">대한민국에서 유일한<br><span class="hi">아열대 기후 섬</span></h2>
+    </div>
+
+    <div class="climate-row">
+      <div class="climate-text">
+        <p>
+          제주도는 기후분류학상 <strong>온난 습윤 기후(온대) ~ 아열대 기후</strong>에 해당하며,
+          사면이 바다로 둘러싸인 해양성 기후의 영향으로 연중 온난 습윤합니다.
+          야자수가 자라는 해안 저지대부터 눈 덮인 한라산 정상까지,
+          하나의 섬 안에 여러 기후대가 공존하는 것이 제주의 가장 큰 기후적 특징입니다.
+        </p>
+        <p>
+          특히 <strong>한라산</strong>은 제주 기후를 결정짓는 핵심 요소입니다.
+          산을 기준으로 남북의 날씨가 극단적으로 달라지고,
+          여름철에는 <strong>푄 현상</strong>이 자주 발생하여 제주시 지역이 
+          서귀포보다 훨씬 더 높은 기온을 보입니다.
+        </p>
+
+        <div class="climate-badge-list">
+          <div class="climate-badge">
+            <span class="cb-icon">🌡️</span>
+            <div>
+              <h4>연평균 기온 16.2°C (제주시 기준)</h4>
+              <p>한반도 내륙보다 현저히 온난하며, 겨울에도 영하로 잘 내려가지 않아 감귤·한라봉 같은 아열대 과수 재배가 가능합니다.</p>
+            </div>
+          </div>
+          <div class="climate-badge">
+            <span class="cb-icon">🌧️</span>
+            <div>
+              <h4>연강수량 약 1,450mm — 본토보다 많음</h4>
+              <p>한라산 남쪽(서귀포)은 연 2,000mm 이상, 북쪽(제주시)은 1,400mm 내외로 같은 섬 안에서 강수량 격차가 큽니다.</p>
+            </div>
+          </div>
+          <div class="climate-badge">
+            <span class="cb-icon">💨</span>
+            <div>
+              <h4>삼다(三多) 중 '바람 많음'</h4>
+              <p>태풍의 길목에 위치하여 강한 바람이 잦습니다. 이 바람이 제주의 독특한 건축 문화(낮은 집, 돌담, 새 지붕 결속)를 만들었습니다.</p>
+            </div>
+          </div>
+          <div class="climate-badge">
+            <span class="cb-icon">🌿</span>
+            <div>
+              <h4>수직 식생 분포</h4>
+              <p>해안 상록활엽수림 → 중산간 낙엽활엽수림 → 고지대 침엽수림(구상나무) → 정상 관목·초원. 하나의 섬에서 열대부터 아한대 식물을 모두 볼 수 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="climate-img-block">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Jeju_Hallasan_in_winter.jpg/1280px-Jeju_Hallasan_in_winter.jpg"
+             alt="겨울 한라산" loading="lazy">
+        <div class="climate-img-caption">
+          겨울 한라산 — 눈 덮인 정상과 아열대 해안이 공존하는 제주의 기후를 상징합니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SECTION 3: 인간 생활·문화 영향 ══ -->
+<section class="section dark">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker" style="color:#95D5B2;">03 지형·기후가 인간 생활에 미친 영향</div>
+      <h2 class="section-title on-dark">화산섬의 환경이<br><span class="hi-dark">빚어낸 제주 문화</span></h2>
+      <p class="section-desc on-dark">
+        제주의 독특한 지형과 기후는 주민의 생활 방식, 산업, 건축, 민속 문화 전반을 결정지었습니다.
+        '삼다(三多) 삼무(三無)'는 바로 이 자연환경에 대한 인간의 적응 방식을 함축한 표현입니다.
+      </p>
+    </div>
+
+    <div class="influence-grid">
+      <!-- 해녀 -->
+      <div class="influence-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Haenyeo_%28female_divers%29_of_Jeju.jpg/1280px-Haenyeo_%28female_divers%29_of_Jeju.jpg"
+             alt="해녀" loading="lazy">
+        <div class="ic-overlay">
+          <div class="ic-num">01</div>
+          <div class="ic-title">🤿 해녀 문화</div>
+          <div class="ic-text">
+            화산섬의 척박한 토지 환경과 풍부한 바다 자원이 맞물려 탄생한 독특한 문화.
+            잠수복 없이 바다에 들어가 해산물을 채취하는 해녀(잠수)는
+            2016년 유네스코 인류무형문화유산으로 등재되었습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 돌담 -->
+      <div class="influence-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Doldam_in_Jeju.jpg/1280px-Doldam_in_Jeju.jpg"
+             alt="제주 돌담" loading="lazy">
+        <div class="ic-overlay">
+          <div class="ic-num">02</div>
+          <div class="ic-title">🪨 돌담 문화</div>
+          <div class="ic-text">
+            화산섬 특성상 밭과 집 주변에 현무암이 넘쳐났습니다.
+            바람을 막고 화산토가 날리는 것을 방지하기 위해
+            독특한 높이와 형태의 돌담(밭담·집담)이 발달했으며,
+            제주 밭담은 세계중요농업유산(GIAHS)으로 등재되었습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 감귤 -->
+      <div class="influence-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jeju_mandarin_orange_farm.jpg/1280px-Jeju_mandarin_orange_farm.jpg"
+             alt="제주 감귤밭" loading="lazy">
+        <div class="ic-overlay">
+          <div class="ic-num">03</div>
+          <div class="ic-title">🍊 감귤 산업</div>
+          <div class="ic-text">
+            온난한 아열대성 기후와 화산 현무암 토양이 감귤 재배에 최적 환경을 제공합니다.
+            제주 감귤은 대한민국 감귤 생산량의 99% 이상을 담당하며,
+            지역 경제의 핵심 산업입니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 돌하르방 -->
+      <div class="influence-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Dol_hareubang.jpg/800px-Dol_hareubang.jpg"
+             alt="돌하르방" loading="lazy">
+        <div class="ic-overlay">
+          <div class="ic-num">04</div>
+          <div class="ic-title">🗿 돌하르방</div>
+          <div class="ic-text">
+            섬에 넘쳐나는 현무암을 조각한 제주의 상징 석상.
+            수호신 역할을 했으며, 화산석의 특유한 질감이
+            제주만의 독특한 조각 예술 문화를 탄생시켰습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 초가 -->
+      <div class="influence-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Jeju_traditional_house.jpg/1280px-Jeju_traditional_house.jpg"
+             alt="제주 전통가옥" loading="lazy">
+        <div class="ic-overlay">
+          <div class="ic-num">05</div>
+          <div class="ic-title">🏘️ 바람에 적응한 건축</div>
+          <div class="ic-text">
+            강한 바람에 대응해 처마를 낮게 설계하고, 지붕은 새끼줄로 단단히 결속하는
+            독특한 전통 가옥 구조가 발달했습니다.
+            집 주변에 키 큰 돌담을 높이 쌓아 방풍 역할을 하도록 했습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- 말 목장 -->
+      <div class="influence-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Hallasan_horses.jpg/1280px-Hallasan_horses.jpg"
+             alt="제주마" loading="lazy">
+        <div class="ic-overlay">
+          <div class="ic-num">06</div>
+          <div class="ic-title">🐴 제주마와 목축 문화</div>
+          <div class="ic-text">
+            한라산 중산간 지대의 넓은 초지는 예로부터 말 방목에 이용되었습니다.
+            '제주마'는 천연기념물 제347호로 지정된 고유 품종이며,
+            중산간 초원은 지금도 제주 특유의 목가적 경관을 형성합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SECTION 4: UNESCO ══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">04 유네스코 인증 현황</div>
+      <h2 class="section-title">대한민국 유일<br><span class="hi">유네스코 자연 트리플 크라운</span></h2>
+    </div>
+
+    <div class="unesco-box">
+      <div class="ub-item">
+        <h3>🌍 세계자연유산 (2007)</h3>
+        <p>
+          한라산 천연보호구역, 성산일출봉, 거문오름 용암동굴계가 등재 대상입니다.
+          <strong>우리나라 최초의 세계자연유산</strong>으로,
+          제주도 전체 면적의 약 10%가 보호구역으로 지정되어 있습니다.
+        </p>
+      </div>
+      <div class="ub-item">
+        <h3>🔬 세계지질공원 (2010)</h3>
+        <p>
+          한라산, 성산일출봉, 만장굴, 주상절리, 용머리해안 등 13개의
+          주요 지질명소를 포함합니다.
+          지질학적 가치와 생태·문화적 가치를 결합한
+          교육·관광의 현장입니다.
+        </p>
+      </div>
+      <div class="ub-item">
+        <h3>🌱 생물권보전지역 (2002)</h3>
+        <p>
+          한라산 일대가 유네스코 생물권보전지역으로 지정되어 있습니다.
+          한반도에서 발견되는 식물의 절반 이상이 제주에 자생하며,
+          한라솜다리 등 제주 고유종이 풍부하게 분포합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SECTION 5: 관광 매력 ══ -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-kicker">05 관광적 매력 요소</div>
+      <h2 class="section-title">관광객이 경험하는<br><span class="hi">제주의 다섯 가지 얼굴</span></h2>
+      <p class="section-desc">
+        시각적 아름다움, 지질 탐험, 문화 체험, 힐링 여행, 미식 여행까지.
+        제주는 단 하나의 여행 목적으로는 다 담을 수 없는 복합 관광지입니다.
+      </p>
+    </div>
+
+    <div class="attraction-list">
+      <!-- 성산일출봉 -->
+      <div class="attraction-item">
+        <div class="ai-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Seongsan_Ilchulbong.jpg/1280px-Seongsan_Ilchulbong.jpg"
+               alt="성산일출봉 일출" loading="lazy">
+        </div>
+        <div class="ai-body">
+          <span class="tag">🌅 시각적 아름다움</span>
+          <h3>성산일출봉 — 바다 위로 솟은 분화구</h3>
+          <p>
+            해발 182m의 거대한 분화구가 바다 위에 솟아 있는 압도적 풍경.
+            일출 시 분화구 능선 너머로 태양이 떠오르는 장면은
+            '한국 10대 절경'으로 꼽힙니다.
+            능선 트레킹(약 20분)으로 정상에 오르면 사방으로 에메랄드 바다가 펼쳐집니다.
+          </p>
+          <div class="badge-row">
+            <span class="badge">👁️ 시각적 아름다움</span>
+            <span class="badge">🥾 트레킹</span>
+            <span class="badge">🌐 UNESCO 세계유산</span>
+            <span class="badge">📸 포토스팟</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 한라산 -->
+      <div class="attraction-item rev">
+        <div class="ai-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Jeju_Hallasan_in_winter.jpg/1280px-Jeju_Hallasan_in_winter.jpg"
+               alt="한라산 등반" loading="lazy">
+        </div>
+        <div class="ai-body">
+          <span class="tag">🏔️ 체험 — 등반·트레킹</span>
+          <h3>한라산 등반 — 사계절 다른 풍경</h3>
+          <p>
+            봄 철쭉, 여름 녹음, 가을 단풍, 겨울 설경.
+            성판악·관음사 코스(8~9시간)로 정상 백록담에 오를 수 있습니다.
+            영실 코스(약 3시간)는 기암괴석의 웅장한 풍경으로 인기가 높습니다.
+            해발 0m 해변에서 출발해 1,950m 정상까지 이르는 경험은 제주에서만 가능합니다.
+          </p>
+          <div class="badge-row">
+            <span class="badge">🥾 등산</span>
+            <span class="badge">❄️ 겨울 설경</span>
+            <span class="badge">🌸 봄 철쭉</span>
+            <span class="badge">🌿 자연생태</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 만장굴 -->
+      <div class="attraction-item">
+        <div class="ai-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Manjang_Cave.jpg/1280px-Manjang_Cave.jpg"
+               alt="만장굴 내부" loading="lazy">
+        </div>
+        <div class="ai-body">
+          <span class="tag">🕳️ 체험 — 동굴 탐험</span>
+          <h3>만장굴 — 지하에서 만나는 용암의 역사</h3>
+          <p>
+            총 길이 약 7.4km, 세계 최장급 용암동굴입니다.
+            약 1km 구간이 일반에 공개되어 있으며,
+            내부에는 세계에서 가장 큰 용암 석주(높이 약 7.6m)가 있습니다.
+            연중 11~21°C의 일정한 온도를 유지해 여름 피서지로도 인기가 높습니다.
+          </p>
+          <div class="badge-row">
+            <span class="badge">🌡️ 연중 서늘</span>
+            <span class="badge">🔦 동굴 탐험</span>
+            <span class="badge">🌐 UNESCO 세계유산</span>
+            <span class="badge">📚 지질 교육</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 협재 해수욕장 -->
+      <div class="attraction-item rev">
+        <div class="ai-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Hyeopjae_Beach_Jeju.jpg/1280px-Hyeopjae_Beach_Jeju.jpg"
+               alt="협재해수욕장" loading="lazy">
+        </div>
+        <div class="ai-body">
+          <span class="tag">🌊 에메랄드 바다</span>
+          <h3>협재·함덕 해수욕장 — 제주의 카리브해</h3>
+          <p>
+            백사장과 에메랄드빛 바다가 만나는 협재해수욕장.
+            앞바다의 비양도와 어우러지는 풍경은 제주 서쪽의 대표 절경입니다.
+            스노클링, 카약, 제트스키 등 해양 레포츠와 함께
+            여름철 수온이 25°C 내외로 해수욕에 최적입니다.
+          </p>
+          <div class="badge-row">
+            <span class="badge">🏖️ 해수욕</span>
+            <span class="badge">🤿 스노클링</span>
+            <span class="badge">🚣 카약</span>
+            <span class="badge">🌅 노을</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 오름 & 힐링 -->
+      <div class="attraction-item">
+        <div class="ai-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sunrise_peak_Jeju_island.jpg/1280px-Sunrise_peak_Jeju_island.jpg"
+               alt="새별오름" loading="lazy">
+        </div>
+        <div class="ai-body">
+          <span class="tag">🌿 힐링 · 오름 탐방</span>
+          <h3>오름 — 제주만의 풀밭 언덕 산책</h3>
+          <p>
+            제주에만 360여 개 존재하는 오름은 가볍게 오를 수 있는 소형 화산 언덕입니다.
+            새별오름의 황금빛 억새, 따라비오름의 중첩된 능선,
+            용눈이오름의 유려한 곡선은 '걷는 것만으로' 힐링이 됩니다.
+            접근성이 뛰어나 가족 여행자에게도 인기입니다.
+          </p>
+          <div class="badge-row">
+            <span class="badge">🌾 억새</span>
+            <span class="badge">👨‍👩‍👧 가족 여행</span>
+            <span class="badge">📸 드론 촬영 명소</span>
+            <span class="badge">🌄 일출·일몰</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ QUOTE ══ -->
+<div class="quote-section">
+  <blockquote>
+    "제주도는 화산이라는 땅의 역사와,<br>
+    바람·돌·바다라는 자연의 조건이 함께<br>
+    인간의 문화를 빚어낸 유일무이한 섬이다."
+  </blockquote>
+  <cite>— 유네스코 세계자연유산 등재 평가 요약 중</cite>
+</div>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <strong>제주도 (Jeju Island)</strong> — 지형·기후·관광 탐구 보고서<br>
+  자료 출처: 유네스코한국위원회, 제주특별자치도, 문화재청, 제주도 세계지질공원, 위키백과, 나무위키<br>
+  자연지형과 관광지 · 기후와 관광지 · 지속가능성을 위한 여행 · 개발과 보존
+</footer>
+
+</body>
+</html>
